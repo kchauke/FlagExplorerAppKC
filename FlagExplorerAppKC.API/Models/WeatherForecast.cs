@@ -1,4 +1,4 @@
-namespace FlagExplorerAppKC.API
+namespace FlagExplorerAppKC.API.Models
 {
     public class WeatherForecast
     {
