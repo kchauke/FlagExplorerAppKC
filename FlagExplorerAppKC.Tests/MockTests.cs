@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace FlagExplorerAppKC.Tests
+﻿namespace FlagExplorerAppKC.Tests
 {
     using Moq;
     using Microsoft.AspNetCore.Http;
@@ -62,7 +56,7 @@ namespace FlagExplorerAppKC.Tests
         }
 
         [Fact]
-        public void TestHttpContextAccessorSetup()
+        public async Task TestHttpContextAccessorSetup()
         {
             var userName = "test ing";
             var userEmail = "test@test.com";
@@ -81,7 +75,7 @@ namespace FlagExplorerAppKC.Tests
 
             var authenticationService = httpContextAccessorMock.Object.HttpContext.RequestServices.GetService(typeof(IAuthenticationService)) as IAuthenticationService;
             Assert.NotNull(authenticationService);
-            var authenticationResult = authenticationService.AuthenticateAsync(httpContextAccessorMock.Object.HttpContext, CookieAuthenticationDefaults.AuthenticationScheme).Result;
+            var authenticationResult = await authenticationService.AuthenticateAsync(httpContextAccessorMock.Object.HttpContext, CookieAuthenticationDefaults.AuthenticationScheme);
             Assert.True(authenticationResult.Succeeded);
         }
     }
