@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Path": "flagexplorerappkc.client\\flagexplorerappkc.client.esproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "FlagExplorerAppKC.Server\\FlagExplorerAppKC.API.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35825.156
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "flagexplorerappkc.client", "flagexplorerappkc.client\flagexplorerappkc.client.esproj", "{2DD58F39-9325-AE7E-122B-4594F95E9DF4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlagExplorerAppKC.API", "FlagExplorerAppKC.API\FlagExplorerAppKC.API.csproj", "{9E54F8D1-C6FA-4630-B4CE-98016A7F7E83}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlagExplorerAppKC.Tests", "FlagExplorerAppKC.Tests\FlagExplorerAppKC.Tests.csproj", "{93F3BC3C-8D7C-4E09-9C0C-2762CA3834CA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2DD58F39-9325-AE7E-122B-4594F95E9DF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DD58F39-9325-AE7E-122B-4594F95E9DF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DD58F39-9325-AE7E-122B-4594F95E9DF4}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{2DD58F39-9325-AE7E-122B-4594F95E9DF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DD58F39-9325-AE7E-122B-4594F95E9DF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DD58F39-9325-AE7E-122B-4594F95E9DF4}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{9E54F8D1-C6FA-4630-B4CE-98016A7F7E83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E54F8D1-C6FA-4630-B4CE-98016A7F7E83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E54F8D1-C6FA-4630-B4CE-98016A7F7E83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E54F8D1-C6FA-4630-B4CE-98016A7F7E83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93F3BC3C-8D7C-4E09-9C0C-2762CA3834CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93F3BC3C-8D7C-4E09-9C0C-2762CA3834CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93F3BC3C-8D7C-4E09-9C0C-2762CA3834CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93F3BC3C-8D7C-4E09-9C0C-2762CA3834CA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0C83973E-D67B-485F-AC17-3428A171BBB4}
+	EndGlobalSection
+EndGlobal
