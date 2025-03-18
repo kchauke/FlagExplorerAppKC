@@ -1,0 +1,64 @@
+name: Build and Package React + .NET API
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      # **Build React Frontend**
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install dependencies
+        run: npm install
+        working-directory: flagexplorerappkc.client
+
+      - name: Run Tests
+        run: npm test
+        working-directory: flagexplorerappkc.client
+        continue-on-error: true
+
+      - name: Build
+        run: npm run build
+
+      # **Build .NET API Backend (flagexplorerappkc.api)**
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 9.0.x
+
+      - name: Restore Dependencies
+        run: dotnet restore
+        working-directory: flagexplorerappkc.api
+
+      - name: Build .NET API
+        run: dotnet build --no-restore
+        working-directory: flagexplorerappkc.api
+
+      # **Merge React into .NET API**
+      - name: Copy React Build to .NET API
+        run: |
+          rm -rf flagexplorerappkc.api/wwwroot
+          mkdir -p flagexplorerappkc.api/wwwroot
+          cp -r flagexplorerappkc.client/build/* flagexplorerappkc.api/wwwroot/
+
+      # **Package for Deployment**
+      - name: Publish .NET API
+        run: dotnet publish --configuration Release --output packaged-app
+        working-directory: flagexplorerappkc.api
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: packaged-app
+          path: flagexplorerappkc.api/packaged-app
