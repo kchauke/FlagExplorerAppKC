@@ -39,6 +39,7 @@ const target = env.ASPNETCORE_HTTPS_PORT ? `https://localhost:${env.ASPNETCORE_H
 
 // https://vitejs.dev/config/
 export default defineConfig({
+    css: ['~/assets/style.css'],
     plugins: [plugin()],
     resolve: {
         alias: {
@@ -53,6 +54,7 @@ export default defineConfig({
             }
         },
         port: parseInt(env.DEV_SERVER_PORT || '65433'),
+        open: "/index.html",
         https: {
             key: fs.readFileSync(keyFilePath),
             cert: fs.readFileSync(certFilePath),

@@ -23,9 +23,9 @@ namespace FlagExplorerAppKC.Tests
     {
         private readonly Mock<IHttpContextAccessor> _httpContextAccessorMock;
         private readonly HttpClient _httpClient;
-        private readonly CountryController _countryController;
+        private readonly CountriesController _countryController;
         private readonly ICountryService _countryService;
-        private readonly ILogger<CountryController> _logger;
+        private readonly ILogger<CountriesController> _logger;
         private readonly ITestOutputHelper _testOutput;
 
         public CountryControllerTests(ITestOutputHelper testOutput)
@@ -49,13 +49,13 @@ namespace FlagExplorerAppKC.Tests
                 BaseAddress = new Uri(baseAddress)
             };
 
-            _logger = testOutput.BuildLoggerFor<CountryController>();
+            _logger = testOutput.BuildLoggerFor<CountriesController>();
             _countryService = new CountryService(_httpClient);
 
             string user = "test", email = "test@test.com";
             _httpContextAccessorMock = this.SetupHttpContextAccessor(user, email);
 
-            _countryController = new CountryController(_countryService, _httpContextAccessorMock.Object, _logger);
+            _countryController = new CountriesController(_countryService, _httpContextAccessorMock.Object, _logger);
             _testOutput = testOutput;
         }
 
