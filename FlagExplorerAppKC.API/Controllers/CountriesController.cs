@@ -7,15 +7,15 @@ using Swashbuckle.AspNetCore.Annotations;
 namespace FlagExplorerAppKC.API.Controllers;
 
 [ApiController]
-[Route("[controller]")]
+[Route("countryapi/[controller]")]
 [Produces("application/json")]
-public class CountryController : ApiBaseController
+public class CountriesController : ApiBaseController
 {
-    private readonly ILogger<CountryController> _logger;
+    private readonly ILogger<CountriesController> _logger;
 
     private readonly ICountryService _countryService;
 
-    public CountryController(ICountryService countryService, IHttpContextAccessor httpContextAccessor, ILogger<CountryController> logger)
+    public CountriesController(ICountryService countryService, IHttpContextAccessor httpContextAccessor, ILogger<CountriesController> logger)
     : base(httpContextAccessor, logger)
     {
         _countryService = countryService ?? throw new ArgumentNullException(nameof(countryService));

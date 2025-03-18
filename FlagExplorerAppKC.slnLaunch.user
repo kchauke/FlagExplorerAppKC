@@ -7,7 +7,7 @@
         "Action": "Start"
       },
       {
-        "Path": "FlagExplorerAppKC.Server\\FlagExplorerAppKC.API.csproj",
+        "Path": "FlagExplorerAppKC.API\\FlagExplorerAppKC.API.csproj",
         "Action": "Start"
       }
     ]
