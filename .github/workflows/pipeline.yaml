@@ -30,6 +30,7 @@ jobs:
 
       - name: Build
         run: npm run build
+        working-directory: flagexplorerappkc.client
 
       # **Build .NET API Backend (flagexplorerappkc.api)**
       - name: Setup .NET
