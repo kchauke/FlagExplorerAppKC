@@ -45,15 +45,14 @@ jobs:
         run: dotnet build --no-restore
 
       - name: Debug folder structure
-        run: ls -R
-
+        run: ls -d */
 
       # **Merge React into .NET API**
       - name: Copy React Build to .NET API
         run: |
           rm -rf wwwroot
           mkdir -p wwwroot
-          cp -r flagexplorerappkc.client/build/* wwwroot/
+          cp -r flagexplorerappkc.client/dist/* wwwroot/
 
       # **Package for Deployment**
       - name: Publish .NET API
