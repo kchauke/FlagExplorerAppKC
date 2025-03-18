@@ -44,6 +44,10 @@ jobs:
       - name: Build .NET API
         run: dotnet build --no-restore
 
+      - name: Debug folder structure
+        run: ls -R
+
+
       # **Merge React into .NET API**
       - name: Copy React Build to .NET API
         run: |
