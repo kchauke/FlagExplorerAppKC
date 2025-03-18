@@ -40,11 +40,9 @@ jobs:
 
       - name: Restore Dependencies
         run: dotnet restore
-        working-directory: flagexplorerappkc.api
 
       - name: Build .NET API
         run: dotnet build --no-restore
-        working-directory: flagexplorerappkc.api
 
       # **Merge React into .NET API**
       - name: Copy React Build to .NET API
