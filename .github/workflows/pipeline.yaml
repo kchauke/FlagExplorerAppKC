@@ -45,7 +45,7 @@ jobs:
         run: dotnet build --no-restore
 
       - name: Debug folder structure
-        run: ls -d */
+        run: ls -ld
 
       # **Merge React into .NET API**
       - name: Copy React Build to .NET API
@@ -57,10 +57,9 @@ jobs:
       # **Package for Deployment**
       - name: Publish .NET API
         run: dotnet publish --configuration Release --output packaged-app
-        working-directory: flagexplorerappkc.api
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
           name: packaged-app
-          path: flagexplorerappkc.api/packaged-app
+          path: packaged-app
