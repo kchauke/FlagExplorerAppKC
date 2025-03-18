@@ -47,9 +47,9 @@ jobs:
       # **Merge React into .NET API**
       - name: Copy React Build to .NET API
         run: |
-          rm -rf flagexplorerappkc.api/wwwroot
-          mkdir -p flagexplorerappkc.api/wwwroot
-          cp -r flagexplorerappkc.client/build/* flagexplorerappkc.api/wwwroot/
+          rm -rf wwwroot
+          mkdir -p wwwroot
+          cp -r flagexplorerappkc.client/build/* wwwroot/
 
       # **Package for Deployment**
       - name: Publish .NET API
